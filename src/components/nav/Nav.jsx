@@ -6,7 +6,7 @@ import {BiBook} from 'react-icons/bi'
 import {FaAward} from 'react-icons/fa'
 import {AiOutlineMessage} from 'react-icons/ai'
 import {AiOutlineProject} from 'react-icons/ai'
-import {GrProjects} from 'react-icons/gr'
+
 
 import { useState } from 'react'
 
