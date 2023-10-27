@@ -1,8 +1,7 @@
 import React from 'react'
 import './contact.css'
 import {MdOutlineEmail} from 'react-icons/md'
-import {BsInstagram} from 'react-icons/bs'
-import {BsWhatsapp} from 'react-icons/bs'
+import {AiFillLinkedin} from 'react-icons/ai'
 import { useRef } from 'react';
 import emailjs from 'emailjs-com';
 
@@ -32,21 +31,17 @@ const Contact = () => {
         <article className = "contact__option">
         <MdOutlineEmail className='contact__option-icon'/>
         <h4>Email</h4>
-        <h5>aggarwaltushar099@gmail.com</h5>
-        <a href="mailto:aggarwaltushar099@gmail.com" target="_blank">Send a message</a>
+        <h5>aggtushar123@gmail.com</h5>
+        <a href="mailto:aggarwaltushar099@gmail.com" target="_blank" rel="noreferrer">Send a message</a>
         </article>
 
         <article className = "contact__option">
-        <BsInstagram className='contact__option-icon'/>
-        <h4>Instagram</h4>
-        <a href="https://api.instagram.com/v1/users/userID?client_id=tushartillionaire" target="_blank">Send a message</a>
+        <AiFillLinkedin className='contact__option-icon'/>
+        <h4>LinkedIn</h4>
+        <a href="https://www.linkedin.com/in/tushar-aggarwal-b24116243?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BBTxHkcDpS06U%2BIluT9vPjA%3D%3D" target="_blank" rel="noreferrer">Send a message</a>
         </article>
 
-        <article className = "contact__option">
-        <BsWhatsapp className='contact__option-icon'/>
-        <h4>Whatsapp</h4>
-        <a href="https://api.whatsapp.com/send?phone=9540389110" target="_blank">Send a message</a>
-        </article>
+
       </div>
 
       <form ref={form} onSubmit={sendEmail}>

@@ -41,7 +41,7 @@ const Experience = () => {
             <DiPython className='experience-details-icon'/>
             <div>
             <h4>Python</h4>
-            <small className='text-light'>Intermediate</small>
+            <small className='text-light'>Experienced</small>
             </div>
           </article>
 
