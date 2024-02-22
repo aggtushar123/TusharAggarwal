@@ -6,32 +6,36 @@ import IMG3 from "../../assets/portfolio3.jpeg";
 import IMG4 from "../../assets/portfolio4.jpeg";
 import IMG5 from "../../assets/portfolio5.png";
 import IMG6 from "../../assets/portfolio6.jpg";
+import IMG7 from "../../assets/support.png";
+import IMG8 from "../../assets/Github.png";
+import IMG9 from "../../assets/feedback.png";
+import IMG10 from "../../assets/notes.png";
 
 const data = [
   {
     id: 1,
-    image: IMG1,
+    image: IMG7,
     title: "Support Desk",
     github: "https://github.com/aggtushar123/support-desk",
     demo: "https://dribbble.com/shots/16673715-Crypto-currency-dashboards-and-financial-data-visualization",
   },
   {
     id: 2,
-    image: IMG2,
+    image: IMG10,
     title: "iNoteBook",
     github: "https://github.com/aggtushar123/iNoteBook",
     demo: "https://dribbble.com/shots/16580766-Orion-UI-kit-Charts-templates-infographics-in-Figma",
   },
   {
     id: 3,
-    image: IMG3,
+    image: IMG9,
     title: "Feedback-App",
     github: "https://github.com/aggtushar123/feedback-app",
     demo: "https://dribbble.com/shots/17290917-Eclipse-Figma-dashboard-UI-kit-for-data-design-web-apps",
   },
   {
     id: 4,
-    image: IMG4,
+    image: IMG8,
     title: "Github Finder",
     github: "https://github.com/aggtushar123/github-finder",
     demo: "https://dribbble.com/shots/17290917-Eclipse-Figma-dashboard-UI-kit-for-data-design-web-apps",
