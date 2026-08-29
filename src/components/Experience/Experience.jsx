@@ -33,19 +33,6 @@ const experiences = [
     ],
     stack: ['ReactJS', 'NodeJS', 'NextJS', 'PostgreSQL'],
   },
-  {
-    id: 3,
-    company: 'Delhi Technological University',
-    role: 'Research Intern',
-    date: 'May 2021 – Aug 2021',
-    summary: 'Reviewed machine learning models to predict accident frequency and severity for improved safety insights.',
-    points: [
-      'Evaluated the efficacy of KNN and Random Forest in predicting the frequency and severity of accidents.',
-      'Employed SVM and Decision Trees to examine key performance parameters behind accident occurrence.',
-      'Leveraged advanced analytical techniques in ML to enhance predictive capabilities for safer environments.',
-    ],
-    stack: ['Python', 'Scikit-Learn', 'KNN', 'Random Forest', 'SVM'],
-  },
 ]
 
 const Experience = () => {

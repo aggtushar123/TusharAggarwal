@@ -124,7 +124,7 @@ const Portfolio = () => {
         <div className="sm:w-7/12 sm:mx-auto">
           <div
             role="tablist"
-            className="relative w-max mx-auto h-12 grid grid-cols-2 items-center px-[3xl] rounded-full bg-[#4db5ff] overflow-hidden shadow-2xl shadow-900/20 transition"
+            className="relative w-max mx-auto h-12 grid grid-cols-2 items-center px-[3xl] rounded-full bg-[var(--color-primary)] overflow-hidden shadow-2xl shadow-900/20 transition"
             aria-label="tabs"
           >
             <div className="absolute indicator top-0 w-32 rounded-full bg-white shadow-md"></div>

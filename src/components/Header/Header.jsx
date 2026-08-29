@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import './header.css'
 import CTA from './CTA'
-import ME from '../../assets/PHOTO.jpg'
+import ME from '../../assets/PHOTO.png'
 import HeaderSocials from './HeaderSocials'
 
 const roles = ['Senior Software Developer', 'Full-Stack Engineer', 'AI / ML Engineer']
