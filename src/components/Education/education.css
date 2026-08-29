@@ -1,0 +1,74 @@
+.education__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.education__card {
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.education__card:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+}
+
+.education__icon {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.education__card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.education__card-head h3 {
+    font-size: 1.05rem;
+}
+
+.education__date {
+    font-size: 0.8rem;
+    color: var(--color-light);
+    white-space: nowrap;
+}
+
+.education__degree {
+    color: var(--color-primary);
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+}
+
+.education__grade {
+    color: var(--color-light);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+.education__courses {
+    font-size: 0.8rem;
+    color: var(--color-light);
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+@media screen and (max-width:1024px) {
+    .education__container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .education__card {
+        padding: 1.5rem;
+    }
+}

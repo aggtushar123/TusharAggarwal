@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "./portfolio.css";
 import IMG1 from "../../assets/portfolio1.jpg";
 import IMG2 from "../../assets/portfolio2.jpg";
@@ -10,101 +11,110 @@ import IMG7 from "../../assets/support.png";
 import IMG8 from "../../assets/Github.png";
 import IMG9 from "../../assets/feedback.png";
 import IMG10 from "../../assets/notes.png";
+import { SiPaytm } from "react-icons/si";
+import { MdOutlineTranslate } from "react-icons/md";
 
 const data = [
   {
     id: 1,
-    image: IMG7,
-    title: "Support Desk",
-    github: "https://github.com/aggtushar123/support-desk",
-    demo: "https://dribbble.com/shots/16673715-Crypto-currency-dashboards-and-financial-data-visualization",
+    icon: <SiPaytm />,
+    title: "Paytm Wallet",
+    description: "Next.js, ExpressJS, Turborepo, Postgres, Prisma, Recoil, NextAuth, Tailwind",
+    github: "https://github.com/aggtushar123/paytm-app",
   },
   {
     id: 2,
-    image: IMG10,
-    title: "iNoteBook",
-    github: "https://github.com/aggtushar123/iNoteBook",
-    demo: "https://dribbble.com/shots/16580766-Orion-UI-kit-Charts-templates-infographics-in-Figma",
+    image: IMG7,
+    title: "Support Desk",
+    github: "https://github.com/aggtushar123/support-desk",
   },
   {
     id: 3,
-    image: IMG9,
-    title: "Feedback-App",
-    github: "https://github.com/aggtushar123/feedback-app",
-    demo: "https://dribbble.com/shots/17290917-Eclipse-Figma-dashboard-UI-kit-for-data-design-web-apps",
+    image: IMG10,
+    title: "iNoteBook",
+    github: "https://github.com/aggtushar123/iNoteBook",
   },
   {
     id: 4,
+    image: IMG9,
+    title: "Feedback-App",
+    github: "https://github.com/aggtushar123/feedback-app",
+  },
+  {
+    id: 5,
     image: IMG8,
     title: "Github Finder",
     github: "https://github.com/aggtushar123/github-finder",
-    demo: "https://dribbble.com/shots/17290917-Eclipse-Figma-dashboard-UI-kit-for-data-design-web-apps",
   },
 ];
 
 const data1 = [
   {
     id: 1,
-    image: IMG1,
-    title: "Face Recognition",
-    github: "https://github.com/aggtushar123/Face-Recognition",
-    demo: "https://dribbble.com/shots/16673715-Crypto-currency-dashboards-and-financial-data-visualization",
+    icon: <MdOutlineTranslate />,
+    title: "Language Translation & Symmetric Cryptography",
+    description: "Transformers-based English-Spanish translation model, BLEU score 75.36",
+    github: "https://github.com/aggtushar123",
   },
   {
     id: 2,
-    image: IMG2,
-    title: "Dominant Color Extraction",
-    github: "https://github.com/aggtushar123/Project-Dominant-Color-Extraction",
-    demo: "https://dribbble.com/shots/16580766-Orion-UI-kit-Charts-templates-infographics-in-Figma",
+    image: IMG1,
+    title: "Face Recognition",
+    github: "https://github.com/aggtushar123/Face-Recognition",
   },
   {
     id: 3,
-    image: IMG3,
-    title: "Spam Classifier",
-    github: "https://github.com/aggtushar123/Project-Spam-Classifier",
-    demo: "https://dribbble.com/shots/17290917-Eclipse-Figma-dashboard-UI-kit-for-data-design-web-apps",
+    image: IMG2,
+    title: "Dominant Color Extraction",
+    github: "https://github.com/aggtushar123/Project-Dominant-Color-Extraction",
   },
   {
     id: 4,
-    image: IMG4,
-    title: "Titanic - Machine Learning from Disaster",
-    github: "https://github.com/aggtushar123/Project-Titanic-Survival-Prediction",
-    demo: "https://dribbble.com/shots/17290917-Eclipse-Figma-dashboard-UI-kit-for-data-design-web-apps",
+    image: IMG3,
+    title: "Spam Classifier",
+    github: "https://github.com/aggtushar123/Project-Spam-Classifier",
   },
   {
     id: 5,
-    image: IMG5,
-    title: "Customer Churn Prediction",
-    github: "https://github.com/aggtushar123/Project-Titanic-Survival-Prediction",
-    demo: "https://dribbble.com/shots/17290917-Eclipse-Figma-dashboard-UI-kit-for-data-design-web-apps",
+    image: IMG4,
+    title: "Titanic - Machine Learning from Disaster",
+    github: "https://github.com/aggtushar123/Project-Titanic-Survival-Prediction/tree/main",
   },
   {
     id: 6,
+    image: IMG5,
+    title: "Customer Churn Prediction",
+    github: "https://github.com/aggtushar123/Project-Titanic-Survival-Prediction",
+  },
+  {
+    id: 7,
     image: IMG6,
     title: "Pokemon Image Classification",
     github: "https://github.com/aggtushar123/Project-Titanic-Survival-Prediction",
-    demo: "https://dribbble.com/shots/17290917-Eclipse-Figma-dashboard-UI-kit-for-data-design-web-apps",
   },
 ];
 
-const Portfolio = () => {
-  const [isActiveClass1, setIsActiveClass1] = useState(true);
-  const [isActiveClass2, setIsActiveClass2] = useState(false);
-  const [bgColor1, setbgColor1] = useState(true)
-  const [bgColor2, setbgColor2] = useState(false)
+const ProjectCard = ({ image, icon, title, description, github }) => (
+  <article className="portfolio__item">
+    <div className="portfolio__item-image">
+      {image ? (
+        <img src={image} alt={title} />
+      ) : (
+        <div className="portfolio__item-icon">{icon}</div>
+      )}
+    </div>
+    <h3>{title}</h3>
+    {description && <p className="portfolio__item-desc">{description}</p>}
+    <div className="portfolio__item-cta">
+      <a href={github} className="btn btn-primary" target="_blank" rel="noreferrer">
+        Github
+      </a>
+    </div>
+  </article>
+);
 
-  const handleClick1 = ( ) => {
-    setIsActiveClass1(true);
-    setIsActiveClass2(false);
-    setbgColor1(true);
-    setbgColor2(false);
-  }
-  const handleClick2 = ( ) => {
-    setIsActiveClass1(false);
-    setIsActiveClass2(true);
-    setbgColor1(false);
-    setbgColor2(true);
-  }
+const Portfolio = () => {
+  const [activeTab, setActiveTab] = useState("web");
 
   return (
     <section id="portfolio">
@@ -120,23 +130,21 @@ const Portfolio = () => {
             <div className="absolute indicator top-0 w-32 rounded-full bg-white shadow-md"></div>
             <button
               role="tab"
-              aria-selected="true"
+              aria-selected={activeTab === "web"}
               aria-controls="panel-1"
               id="tab-1"
-              tabindex="0"
-              className={bgColor1 ?'relative block h-12 px-6 tab rounded-full bg-white shadow-md':'relative block h-10 px-6 tab rounded-full'}
-              onClick={handleClick1}
+              className={activeTab === "web" ? 'relative block h-12 px-6 tab rounded-full bg-white shadow-md' : 'relative block h-10 px-6 tab rounded-full'}
+              onClick={() => setActiveTab("web")}
             >
-              <span class="text-gray-800">Web Delvelopment</span>
+              <span className="text-gray-800">Web Development</span>
             </button>
             <button
               role="tab"
-              aria-selected="false"
+              aria-selected={activeTab === "ml"}
               aria-controls="panel-2"
               id="tab-2"
-              tabindex="-1"
-              className={bgColor2 ? 'relative block h-12 px-6 tab rounded-full bg-white shadow-md':'relative block h-10 px-6 tab rounded-full'}
-              onClick={handleClick2}
+              className={activeTab === "ml" ? 'relative block h-12 px-6 tab rounded-full bg-white shadow-md' : 'relative block h-10 px-6 tab rounded-full'}
+              onClick={() => setActiveTab("ml")}
             >
               <span className="text-gray-800">Machine Learning</span>
             </button>
@@ -144,45 +152,36 @@ const Portfolio = () => {
         </div>
       </div>
       <div>
-      <div role="tabpanel" id="panel-1" className={isActiveClass1 ? 'tab-panel p-7 container portfolio__container':'absolute top-0 invisible opacity-0 tab-panel p-7 container portfolio__container'}>
-        {data.map(({ id, image, title, github, demo }) => {
-          return (
-            <article key={id} className="portfolio__item">
-              <div className="portfolio__item-image">
-                <img src={image} alt={title} />
-              </div>
-              <h3>{title}</h3>
-              <div className="portfolio__item-cta">
-                <a href={github} className="btn" target="__blank">
-                  Github
-                </a>
-                <a href={demo} className="btn btn-primary" target="blank">
-                  Live Demo
-                </a> 
-              </div>
-            </article>
-          );
-        })}
+        {activeTab === "web" && (
+          <div role="tabpanel" id="panel-1" className="tab-panel p-7 container portfolio__container">
+            {data.map((item) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <ProjectCard {...item} />
+              </motion.div>
+            ))}
+          </div>
+        )}
+        {activeTab === "ml" && (
+          <div role="tabpanel" id="panel-2" className="tab-panel p-7 container portfolio__container">
+            {data1.map((item) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <ProjectCard {...item} />
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
-      <div role="tabpanel" id="panel-2" className={isActiveClass2 ? 'tab-panel p-7 container portfolio__container':'absolute top-0 invisible opacity-0 tab-panel p-7 container portfolio__container'}>
-        {data1.map(({ id, image, title, github, demo }) => {
-          return (
-            <article key={id} className="portfolio__item">
-              <div className="portfolio__item-image">
-                <img src={image} alt={title} />
-              </div>
-              <h3>{title}</h3>
-              <div className="portfolio__item-cta">
-                <a href={github} className="btn" target="__blank">
-                  Github
-                </a>
-              </div>
-            </article>
-          );
-        })}
-      </div>
-      </div>
-      
+
     </section>
   );
 };

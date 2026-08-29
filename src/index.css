@@ -25,6 +25,15 @@
     --container-width-sm: 90%;
 }
 
+body.light-mode {
+    --color-bg: #f4f6fb;
+    --color-bg-variant: #ffffff;
+    --color-primary: #0f6fd1;
+    --color-primary-variant: rgba(15, 111, 209, 0.15);
+    --color-white: #16192e;
+    --color-light: rgba(22, 25, 46, 0.65);
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -39,9 +48,24 @@ body{
     color: var(--color-white);
     line-height: 1.7;
     background-image: url(../src/assets/bg-texture.png);
-
+    transition: background-color 400ms ease, color 400ms ease;
 }
 
+body.light-mode {
+    background-image: none;
+}
+
+/* card-like surfaces get a soft shadow in light mode so they read against a white page */
+body.light-mode .about__card,
+body.light-mode .education__card,
+body.light-mode .experience__card,
+body.light-mode .skills__container > div,
+body.light-mode .portfolio__item,
+body.light-mode .achievements__panel,
+body.light-mode .leadership__card,
+body.light-mode .contact__option {
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
 
 .container {
     width: var(--container-width-lg);
@@ -59,14 +83,14 @@ h1{
 
 section{
     margin-top: 8rem;
-    
+
 }
 
 section > h2, section > h5 {
     text-align: center;
     color: var(--color-light);
 }
- section> h2 { 
+ section> h2 {
     color: var(--color-primary);
     margin-bottom: 3rem;
  }
@@ -79,7 +103,7 @@ section > h2, section > h5 {
 a {
     color: var(--color-primary);
     transition: var(--transition);
-} 
+}
 
 a:hover{
     color: var(--color-white);

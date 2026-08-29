@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './nav.css'
 import {AiOutlineHome} from 'react-icons/ai'
 import {AiOutlineUser} from 'react-icons/ai'
@@ -6,22 +6,82 @@ import {BiBook} from 'react-icons/bi'
 import {FaAward} from 'react-icons/fa'
 import {AiOutlineMessage} from 'react-icons/ai'
 import {AiOutlineProject} from 'react-icons/ai'
+import {BsSunFill, BsMoonStarsFill} from 'react-icons/bs'
 
-
-import { useState } from 'react'
+const navLinks = [
+  { id: 'home', href: '#home', icon: <AiOutlineHome/>, label: 'Home' },
+  { id: 'about', href: '#about', icon: <AiOutlineUser/>, label: 'About' },
+  { id: 'experience', href: '#experience', icon: <BiBook/>, label: 'Experience' },
+  { id: 'portfolio', href: '#portfolio', icon: <AiOutlineProject/>, label: 'Projects' },
+  { id: 'achievements', href: '#achievements', icon: <FaAward/>, label: 'Achievements' },
+  { id: 'contact', href: '#contact', icon: <AiOutlineMessage/>, label: 'Contact' },
+]
 
 const Nav = () => {
 
-  const [activeNav, setActiveNav] = useState('#'); 
+  const [activeNav, setActiveNav] = useState('home');
+  const [isLight, setIsLight] = useState(false);
+
+  useEffect(() => {
+    const stored = localStorage.getItem('theme');
+    const light = stored === 'light';
+    setIsLight(light);
+    document.body.classList.toggle('light-mode', light);
+  }, []);
+
+  const toggleTheme = () => {
+    setIsLight((prev) => {
+      const next = !prev;
+      document.body.classList.toggle('light-mode', next);
+      localStorage.setItem('theme', next ? 'light' : 'dark');
+      return next;
+    });
+  };
+
+  useEffect(() => {
+    const sectionIds = ['home', 'about', 'education', 'experience', 'skills', 'portfolio', 'achievements', 'leadership', 'contact'];
+    const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+
+    // sections without a dedicated nav icon fall back to the nearest earlier nav link
+    const fallback = { education: 'about', skills: 'experience', leadership: 'achievements' };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id || 'home';
+            setActiveNav(fallback[id] || id);
+          }
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <nav>
-    <a href="#" onClick = {() => setActiveNav('#')} className={activeNav==='#' ? 'active':''}><AiOutlineHome/></a>
-    <a href="#about" onClick= {() => setActiveNav('#about')} className={activeNav==='#about' ? 'active':''}  ><AiOutlineUser/></a>
-    <a href="#experience" onClick = {() => setActiveNav('#experience')} className={activeNav==='#experience'? 'active':''}><BiBook/></a>
-    <a href="#portfolio" onClick = {() => setActiveNav('#portfolio')} className={activeNav==='#portfolio'? 'active':''}><AiOutlineProject/></a>
-    <a href="#services" onClick = {() => setActiveNav('#services')} className={activeNav==='#services'? 'active':''}><FaAward/></a>
-    <a href="#contact" onClick = {() => setActiveNav('#contact')} className={activeNav==='#contac'? 'active':''}><AiOutlineMessage/></a>
+      {navLinks.map(({ id, href, icon, label }) => (
+        <a
+          key={id}
+          href={href}
+          aria-label={label}
+          onClick={() => setActiveNav(id)}
+          className={activeNav === id ? 'active' : ''}
+        >
+          {icon}
+        </a>
+      ))}
+      <button
+        type="button"
+        aria-label="Toggle theme"
+        className="nav__theme-toggle"
+        onClick={toggleTheme}
+      >
+        {isLight ? <BsMoonStarsFill/> : <BsSunFill/>}
+      </button>
     </nav>
   )
 }

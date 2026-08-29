@@ -2,24 +2,33 @@ import React from 'react'
 import Header from './components/Header/Header'
 import Nav from './components/nav/Nav'
 import About from './components/About/About'
+import Education from './components/Education/Education'
 import Experience from './components/Experience/Experience'
-import Services from './components/services/Services'
+import Skills from './components/Skills/Skills'
 import Portfolio from './components/portfolio/Portfolio'
+import Achievements from './components/Achievements/Achievements'
+import Leadership from './components/Leadership/Leadership'
 import Contact from './components/contact/Contact'
 import Footer from './components/Footer/Footer'
+import ScrollTop from './components/ScrollTop/ScrollTop'
+
 const App = () => {
 
-  
+
   return (
     <>
         <Header/>
         <Nav/>
         <About/>
+        <Education/>
         <Experience/>
+        <Skills/>
         <Portfolio/>
-        <Services/>
+        <Achievements/>
+        <Leadership/>
         <Contact/>
         <Footer/>
+        <ScrollTop/>
 
     </>
   )

@@ -1,134 +1,93 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import './experience.css'
-import {AiOutlineHtml5} from 'react-icons/ai'
-import {DiCss3} from 'react-icons/di'
-import {DiReact} from 'react-icons/di'
-import {DiJqueryLogo} from 'react-icons/di'
-import {FaNode} from 'react-icons/fa'
 import {AiTwotoneCheckCircle} from 'react-icons/ai'
-import {DiMongodb} from 'react-icons/di'
-import {DiPython} from 'react-icons/di'
-import {DiPostgresql} from 'react-icons/di'
-import {SiJavascript} from 'react-icons/si'
-import {SiCplusplus} from 'react-icons/si'
+
+const experiences = [
+  {
+    id: 1,
+    company: 'Plunes HealthCare',
+    role: 'Senior Software Developer',
+    date: 'Sep 2024 – Present',
+    summary: 'Developing AI-driven solutions and scalable systems, enhancing operational efficiency and driving business growth.',
+    points: [
+      'Developed an AI-powered tool to extract structured data from hospital bills and discharge summaries (PDFs/images), improving claim processing efficiency by 78%.',
+      'Collaborated across teams to integrate microservices, ensuring seamless migration of notification systems.',
+      "Transitioned the company's website to Next.js, reducing page size by 50%, improving SEO and enabling real-time content management via the CRM panel.",
+      'Mentored and managed new hires, fostering their growth and promoting a collaborative work environment.',
+    ],
+    stack: ['NodeJS', 'ReactJS', 'MongoDB', 'Kafka', 'Kubernetes', 'Next.js', 'Tesseract OCR', 'EasyOCR', 'Python (NLP)'],
+  },
+  {
+    id: 2,
+    company: 'Chegg Inc',
+    role: 'Software Development Engineer & Subject Matter Expert',
+    date: 'Jan 2022 – May 2024',
+    summary: 'Built end-to-end products with Business Intelligence over 2.5 years in a global org, while instructing learners worldwide.',
+    points: [
+      'Engineered and optimised 10+ software solutions, reducing system errors by 40% and contributing to revenue growth.',
+      'Led cross-functional collaboration across six teams, producing technical documentation and scalable APIs.',
+      "Integrated a feedback mechanism in Chegg's grading system, increasing efficiency by 45%.",
+      'Built a Resume Builder for mentees, increasing resume shortlisting rates by over 30%.',
+      'Taught and mentored over 4000 learners in Data Structures, Algorithms, and Fullstack Development.',
+    ],
+    stack: ['ReactJS', 'NodeJS', 'NextJS', 'PostgreSQL'],
+  },
+  {
+    id: 3,
+    company: 'Delhi Technological University',
+    role: 'Research Intern',
+    date: 'May 2021 – Aug 2021',
+    summary: 'Reviewed machine learning models to predict accident frequency and severity for improved safety insights.',
+    points: [
+      'Evaluated the efficacy of KNN and Random Forest in predicting the frequency and severity of accidents.',
+      'Employed SVM and Decision Trees to examine key performance parameters behind accident occurrence.',
+      'Leveraged advanced analytical techniques in ML to enhance predictive capabilities for safer environments.',
+    ],
+    stack: ['Python', 'Scikit-Learn', 'KNN', 'Random Forest', 'SVM'],
+  },
+]
+
 const Experience = () => {
   return (
     <section id='experience'>
-    <h5>What Skills I have</h5>
-    <h2>My Experience</h2>
+    <h5>My Professional Journey</h5>
+    <h2>Work Experience</h2>
 
     <div className="container experience__container">
-      <div className="experierience__languages">
-        <h3>Languages</h3>
-        <div className="experience__content">
-        <article className="experience__details">
-            <SiCplusplus className='experience-details-icon'/>
+      {experiences.map(({ id, company, role, date, summary, points, stack }, index) => (
+        <motion.article
+          key={id}
+          className="experience__card"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: index * 0.12 }}
+        >
+          <div className="experience__card-head">
             <div>
-            <h4>C++</h4>
-            <small className='text-light'>Experienced</small>
+              <h3>{role}</h3>
+              <span className="experience__company">{company}</span>
             </div>
-          </article>
-
-          <article className="experience__details">
-            <SiJavascript className='experience-details-icon'/>
-            <div>
-            <h4>Javascript</h4>
-            <small className='text-light'>Experienced</small>
-            </div>
-          </article>
-
-          <article className="experience__details">
-            <DiPython className='experience-details-icon'/>
-            <div>
-            <h4>Python</h4>
-            <small className='text-light'>Experienced</small>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <div className="experierience__frontend">
-        <h3>Frontend Development</h3>
-        <div className="experience__content">
-        <article className="experience__details">
-            <AiOutlineHtml5 className='experience-details-icon'/>
-            <div>
-            <h4>HTML</h4>
-            <small className='text-light'>Experienced</small>
-            </div>
-          </article>
-
-          <article className="experience__details">
-            <DiCss3 className='experience-details-icon'/>
-            <div>
-            <h4>CSS</h4>
-            <small className='text-light'>Intermediate</small>
-            </div>
-          </article>
-
-          <article className="experience__details">
-            <DiJqueryLogo className='experience-details-icon'/>
-            <div>
-            <h4>JQuery</h4>
-            <small className='text-light'>Intermediate</small>
-            </div>
-          </article>
-
-          <article className="experience__details">
-            <DiReact className='experience-details-icon'/>
-            <div>
-            <h4>React</h4>
-            <small className='text-light'>Intermediate</small>
-            </div>
-          </article>
-        </div>
-
-
-
-      </div>
-
-    <div className= "experienvce__backend">
-      <h3>Backend Development</h3>
-        <div className="experience__content">
-
-          <article className="experience__details">
-            <FaNode className='experience-details-icon'/>
-            <div>
-            <h4>NodeJS</h4>
-            <small className='text-light'>Experienced</small>
-            </div>
-          </article>
-
-          <article className="experience__details">
-            <AiTwotoneCheckCircle className='experience-details-icon'/>
-            <div>
-            <h4>Express</h4>
-            <small className='text-light'>Intermediate</small>
-            </div>
-          </article>
-
-          <article className="experience__details">
-            <DiMongodb className='experience-details-icon'/>
-            <div>
-            <h4>Mongo</h4>
-            <small className='text-light'>Intermediate</small>
-            </div>
-          </article>
-
-          <article className="experience__details">
-            <DiPostgresql className='experience-details-icon'/>
-            <div>
-            <h4>PostgreSQL</h4>
-            <small className='text-light'>Intermediate</small>
-            </div>
-          </article>
-
-
-        </div>
-        </div>
-        </div>
-  
+            <span className="experience__date">{date}</span>
+          </div>
+          <p className="experience__summary">{summary}</p>
+          <ul className="experience__points">
+            {points.map((point, i) => (
+              <li key={i}>
+                <AiTwotoneCheckCircle className='experience__point-icon'/>
+                <p>{point}</p>
+              </li>
+            ))}
+          </ul>
+          <div className="experience__stack">
+            {stack.map((tech) => (
+              <span key={tech} className="experience__stack-pill">{tech}</span>
+            ))}
+          </div>
+        </motion.article>
+      ))}
+    </div>
 
     </section>
   )

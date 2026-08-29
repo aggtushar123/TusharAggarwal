@@ -22,13 +22,30 @@
     overflow: hidden;
 }
 
+.portfolio__item-icon {
+    width: 100%;
+    aspect-ratio: 16/10;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--color-primary-variant), transparent);
+    font-size: 3.5rem;
+    color: var(--color-primary);
+}
+
 .portfolio__item h3 {
-    margin: 1.2rem 0 2rem;
+    margin: 1.2rem 0 0.6rem;
+}
+
+.portfolio__item-desc {
+    font-size: 0.8rem;
+    color: var(--color-light);
+    margin-bottom: 1.2rem;
 }
 
 .portfolio__item-cta {
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
