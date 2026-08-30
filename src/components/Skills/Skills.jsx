@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import './skills.css'
-import {SiJavascript, SiTypescript, SiCplusplus, SiExpress, SiPrisma, SiDjango, SiNumpy, SiPandas, SiTensorflow, SiKeras, SiScikitlearn, SiApachekafka, SiRedis, SiGraphql, SiKubernetes} from 'react-icons/si'
+import {SiJavascript, SiTypescript, SiCplusplus, SiExpress, SiPrisma, SiDjango, SiNumpy, SiPandas, SiTensorflow, SiKeras, SiScikitlearn, SiApachekafka, SiRedis, SiGraphql, SiKubernetes, SiAmazonaws} from 'react-icons/si'
 import {DiPython, DiJava, DiHtml5, DiReact, DiNodejsSmall, DiPostgresql, DiMongodb, DiGit} from 'react-icons/di'
 import {FaDatabase, FaDocker} from 'react-icons/fa'
 import {TbBrandNextjs} from 'react-icons/tb'
@@ -38,7 +38,7 @@ const skillGroups = [
     ],
   },
   {
-    title: 'DevOps',
+    title: 'DevOps & Cloud',
     skills: [
       { name: 'Git', icon: <DiGit/> },
       { name: 'Docker', icon: <FaDocker/> },
@@ -46,6 +46,7 @@ const skillGroups = [
       { name: 'WebSockets', icon: <AiOutlineApi/> },
       { name: 'Kafka', icon: <SiApachekafka/> },
       { name: 'Kubernetes', icon: <SiKubernetes/> },
+      { name: 'AWS', icon: <SiAmazonaws/> },
     ],
   },
   {

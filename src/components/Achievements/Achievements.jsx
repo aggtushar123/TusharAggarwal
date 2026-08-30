@@ -5,6 +5,11 @@ import {BiCheck} from 'react-icons/bi'
 import {FaExternalLinkAlt} from 'react-icons/fa'
 
 const honors = [
+  {
+    title: 'Intel ISEF 2017 Finalist',
+    detail: '"Celiac Disease Treatment: Mitigating Gluten Intolerance Using Punarnavine" — Translational Medical Science, at the world\'s largest pre-collegiate science fair.',
+    url: 'https://abstracts.societyforscience.org/Home/FullAbstract?ISEFYears=2018%2C2017%2C2016%2C&Category=Any%20Category&AllAbstracts=True&FairCountry=Any%20Country&FairState=Any%20State&ProjectId=9165',
+  },
   { title: 'AUVSI SUAS 2022', detail: 'Team ranked 3rd in Technical Design and 5th in Flight Readiness Review.' },
   { title: 'IAF Mehar Baba Swarm Drone', detail: 'Co-Winner of first prize, "Best Communication Architecture".' },
   { title: 'Shell Eco Marathon', detail: 'Global Winner, Pitch the Future 2021.' },
@@ -72,10 +77,17 @@ const Achievements = () => {
             transition={{ duration: 0.4 }}
           >
             <ul className='achievements__list'>
-              {honors.map(({ title, detail }) => (
+              {honors.map(({ title, detail, url }) => (
                 <li key={title}>
                   <BiCheck className='achievements__list-icon'/>
-                  <p><b>{title}</b> — {detail}</p>
+                  <p>
+                    {url ? (
+                      <a href={url} target="_blank" rel="noreferrer"><b>{title}</b></a>
+                    ) : (
+                      <b>{title}</b>
+                    )}
+                    {' '}— {detail}
+                  </p>
                 </li>
               ))}
             </ul>

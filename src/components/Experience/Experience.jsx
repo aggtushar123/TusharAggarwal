@@ -7,7 +7,7 @@ const experiences = [
   {
     id: 1,
     company: 'Plunes HealthCare',
-    role: 'Senior Software Developer',
+    role: 'Senior Software Engineer',
     date: 'Sep 2024 – Present',
     summary: 'Developing AI-driven solutions and scalable systems, enhancing operational efficiency and driving business growth.',
     points: [

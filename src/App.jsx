@@ -6,6 +6,7 @@ import Education from './components/Education/Education'
 import Experience from './components/Experience/Experience'
 import Skills from './components/Skills/Skills'
 import Portfolio from './components/portfolio/Portfolio'
+import Blog from './components/Blog/Blog'
 import Achievements from './components/Achievements/Achievements'
 import Leadership from './components/Leadership/Leadership'
 import Contact from './components/contact/Contact'
@@ -20,10 +21,11 @@ const App = () => {
         <Header/>
         <Nav/>
         <About/>
-        <Education/>
         <Experience/>
         <Skills/>
+        <Education/>
         <Portfolio/>
+        <Blog/>
         <Achievements/>
         <Leadership/>
         <Contact/>

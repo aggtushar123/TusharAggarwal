@@ -45,23 +45,91 @@ header{
     left: calc(50% - 9.5rem);
     width: 19rem;
     margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
 }
 
-.me::before {
+.me__photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 486 / 436;
+}
+
+.me__photo::before {
     content: '';
     position: absolute;
-    inset: 6% 8% 4%;
-    background: radial-gradient(ellipse at center, var(--color-primary), transparent 70%);
-    opacity: 0.45;
-    filter: blur(35px);
+    inset: 0;
+    border-radius: 50% 50% 0 0;
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-variant) 70%, transparent 100%);
     z-index: -1;
 }
 
 .me img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.35));
+}
+
+.current-position {
+    width: 100%;
+    text-align: left;
+    background: var(--color-bg-variant);
+    border: 1px solid var(--color-primary-variant);
+    border-radius: 1rem;
+    padding: 1rem 1.2rem;
+}
+
+.current-position__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.current-position__label {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-light);
+}
+
+.current-position__status {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    white-space: nowrap;
+}
+
+.current-position__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 0 0 var(--color-primary-variant);
+    animation: current-position-pulse 2s infinite;
+}
+
+@keyframes current-position-pulse {
+    0% { box-shadow: 0 0 0 0 var(--color-primary-variant); }
+    70% { box-shadow: 0 0 0 6px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.current-position__role {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.current-position__company {
+    font-size: 0.78rem;
+    color: var(--color-light);
 }
 
 .scroll__down {

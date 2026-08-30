@@ -39,11 +39,11 @@ const Nav = () => {
   };
 
   useEffect(() => {
-    const sectionIds = ['home', 'about', 'education', 'experience', 'skills', 'portfolio', 'achievements', 'leadership', 'contact'];
+    const sectionIds = ['home', 'about', 'education', 'experience', 'skills', 'portfolio', 'blog', 'achievements', 'leadership', 'contact'];
     const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
     // sections without a dedicated nav icon fall back to the nearest earlier nav link
-    const fallback = { education: 'about', skills: 'experience', leadership: 'achievements' };
+    const fallback = { skills: 'experience', education: 'experience', blog: 'portfolio', leadership: 'achievements' };
 
     const observer = new IntersectionObserver(
       (entries) => {

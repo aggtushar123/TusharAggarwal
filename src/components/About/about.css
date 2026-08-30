@@ -1,3 +1,10 @@
+/* the hero photo + "Current Position" badge are absolutely positioned, so they
+   don't count toward header's own box height — pull About down further so it
+   clears the badge instead of crowding it (overrides the global section rule) */
+#about {
+    margin-top: 15rem;
+}
+
 .about__container {
     max-width: 700px;
     margin: 0 auto;

@@ -26,7 +26,7 @@ const About = () => {
         <article className='about__card'>
           <FaAward className='about__icon'/>
           <h5>Experience</h5>
-          <small>2+ Years Working</small>
+          <small>4+ Years Working</small>
         </article>
         <article className='about__card'>
           <FaUsers className='about__icon'/>
@@ -40,7 +40,7 @@ const About = () => {
         </article>
       </div>
     <p>
-    Senior Software Developer at Plunes HealthCare, building AI-driven tools and scalable systems, with prior
+    Senior Software Engineer at Plunes HealthCare, building AI-driven tools and scalable systems, with prior
     experience as an SDE &amp; Subject Matter Expert at Chegg. Pursuing a Minor in Artificial Intelligence at
     IIT Ropar alongside a B.Tech from Delhi Technological University. I enjoy shipping full-stack products and
     applying NLP/ML to real operational problems.

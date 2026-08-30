@@ -5,7 +5,7 @@ import CTA from './CTA'
 import ME from '../../assets/PHOTO.png'
 import HeaderSocials from './HeaderSocials'
 
-const roles = ['Senior Software Developer', 'Full-Stack Engineer', 'AI / ML Engineer']
+const roles = ['Senior Software Engineer', 'Full-Stack Engineer', 'AI / ML Engineer']
 
 const Header = () => {
   const [roleIndex, setRoleIndex] = useState(0)
@@ -53,7 +53,26 @@ const Header = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <img src={ME} alt="Tushar Aggarwal" />
+          <div className="me__photo">
+            <img src={ME} alt="Tushar Aggarwal" />
+          </div>
+
+          <motion.div
+            className="current-position"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <div className="current-position__head">
+              <span className="current-position__label">Current Position</span>
+              <span className="current-position__status">
+                <span className="current-position__dot"></span>
+                Active
+              </span>
+            </div>
+            <h4 className="current-position__role">Senior Software Engineer</h4>
+            <p className="current-position__company">Plunes HealthCare · Full-time, Remote</p>
+          </motion.div>
         </motion.div>
 
         <a href="#contact" className='scroll__down'>Scroll Down</a>
