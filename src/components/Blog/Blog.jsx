@@ -16,7 +16,16 @@ import { MdOutlineArticle } from 'react-icons/md'
 //   excerpt: 'One line about it', // optional
 //   featuredIn: { name: 'Fortune', url: 'https://...' }, // optional press mention
 // }
-const posts = []
+const posts = [
+  {
+    id: 1,
+    title: 'The Bug Where Every Check Passed and the Data Was Still Wrong',
+    platform: 'medium',
+    url: 'https://medium.com/@aggtushar123/the-bug-where-every-check-passed-and-the-data-was-still-wrong-ffc1a970db0e',
+    date: 'Aug 2026',
+    excerpt: 'A migration validation bug, a silent foreign-key failure, and the danger of recovery paths with false preconditions \u2014 lessons from building mongopg-migrate.',
+  },
+]
 
 const platformMeta = {
   medium: { label: 'Medium', icon: <SiMedium /> },
